@@ -1,5 +1,10 @@
 <template>
-  <button class="g-button">按钮</button>
+  <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
+    <g-icon :name="icon" v-if="icon" class="icon"></g-icon>
+    <div class="content">
+      <slot></slot>
+    </div>
+  </button>
 </template>
 
 <script>
