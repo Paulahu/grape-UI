@@ -1,3 +1,11 @@
+@keyframes spin-data-v-ea7f05 {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
 .g-button[data-v-ea7f05] {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -35,6 +43,9 @@
 }
 .g-button.icon-right > .content[data-v-ea7f05] {
     order: 1;
+}
+.g-button > .loading[data-v-ea7f05] {
+    animation: spin-data-v-ea7f05 linear 1.5s infinite;
 }
 
 .g-icon[data-v-b819a8] {
