@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/Paulahu/grape-UI/issues"
   },
-  "homepage": "https://github.com/Paulahu/grape-UI#readme"
+  "homepage": "https://github.com/Paulahu/grape-UI#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
 }
