@@ -15,3 +15,10 @@ new Vue({
     loading3: false,
   }
 })
+
+//单元测试
+{
+  const Constructor = Vue.extend(Button)  //把Button组件变成一个构造函数
+  const button = new Constructor()  //变成一个实例
+  button.$mount('#test')  //button实例挂载到test上
+}

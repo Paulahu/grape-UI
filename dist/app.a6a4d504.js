@@ -12464,14 +12464,14 @@ var _default = {
   }
 };
 exports.default = _default;
-        var $ea7f05 = exports.default || module.exports;
+        var $3c7161 = exports.default || module.exports;
       
-      if (typeof $ea7f05 === 'function') {
-        $ea7f05 = $ea7f05.options;
+      if (typeof $3c7161 === 'function') {
+        $3c7161 = $3c7161.options;
       }
     
         /* template */
-        Object.assign($ea7f05, (function () {
+        Object.assign($3c7161, (function () {
           var render = function() {
   var _obj
   var _vm = this
@@ -12512,7 +12512,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: "data-v-ea7f05",
+            _scopeId: "data-v-3c7161",
             functional: undefined
           };
         })());
@@ -12525,9 +12525,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$ea7f05', $ea7f05);
+            api.createRecord('$3c7161', $3c7161);
           } else {
-            api.reload('$ea7f05', $ea7f05);
+            api.reload('$3c7161', $3c7161);
           }
         }
 
@@ -12556,14 +12556,14 @@ var _default = {
   props: ['name']
 };
 exports.default = _default;
-        var $b819a8 = exports.default || module.exports;
+        var $b5dce8 = exports.default || module.exports;
       
-      if (typeof $b819a8 === 'function') {
-        $b819a8 = $b819a8.options;
+      if (typeof $b5dce8 === 'function') {
+        $b5dce8 = $b5dce8.options;
       }
     
         /* template */
-        Object.assign($b819a8, (function () {
+        Object.assign($b5dce8, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -12579,7 +12579,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: "data-v-b819a8",
+            _scopeId: "data-v-b5dce8",
             functional: undefined
           };
         })());
@@ -12592,9 +12592,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$b819a8', $b819a8);
+            api.createRecord('$b5dce8', $b5dce8);
           } else {
-            api.reload('$b819a8', $b819a8);
+            api.reload('$b5dce8', $b5dce8);
           }
         }
 
@@ -12648,14 +12648,14 @@ var _default = {
   }
 };
 exports.default = _default;
-        var $8575a6 = exports.default || module.exports;
+        var $d93f7b = exports.default || module.exports;
       
-      if (typeof $8575a6 === 'function') {
-        $8575a6 = $8575a6.options;
+      if (typeof $d93f7b === 'function') {
+        $d93f7b = $d93f7b.options;
       }
     
         /* template */
-        Object.assign($8575a6, (function () {
+        Object.assign($d93f7b, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -12669,7 +12669,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: "data-v-8575a6",
+            _scopeId: "data-v-d93f7b",
             functional: undefined
           };
         })());
@@ -12682,9 +12682,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$8575a6', $8575a6);
+            api.createRecord('$d93f7b', $d93f7b);
           } else {
-            api.reload('$8575a6', $8575a6);
+            api.reload('$d93f7b', $d93f7b);
           }
         }
 
@@ -12721,7 +12721,16 @@ new _vue.default({
     loading2: false,
     loading3: false
   }
-});
+}); //单元测试
+
+{
+  var Constructor = _vue.default.extend(_Button.default); //把Button组件变成一个构造函数
+
+
+  var button = new Constructor(); //变成一个实例
+
+  button.$mount('#test'); //button实例挂载到test上
+}
 },{"vue":"node_modules/vue/dist/vue.common.js","./Button":"src/Button.vue","./Icon":"src/Icon.vue","./Button-group":"src/Button-group.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -12750,7 +12759,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58755" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65056" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
