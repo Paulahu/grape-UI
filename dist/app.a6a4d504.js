@@ -23089,22 +23089,127 @@ new _vue.default({
   }
 });
 var expect = _chai.default.expect; //单元测试
+//用例1
 
 {
   var Constructor = _vue.default.extend(_Button.default); //把Button组件变成一个构造函数
 
 
-  var button = new Constructor({
+  var vm = new Constructor({
     propsData: {
       icon: 'setting'
     }
   }); //变成一个实例
 
-  button.$mount('#test'); //button实例挂载到test上
+  vm.$mount('#test'); //button实例挂载到test上
 
-  var useElement = button.$el.querySelector('use');
+  var useElement = vm.$el.querySelector('use');
   var href = useElement.getAttribute('xlink:href');
   expect(href).to.eq('#i-setting');
+  vm.$el.remove(); //删除button元素
+
+  vm.$destroy(); //删除button对象
+} //用例2
+
+{
+  var _Constructor = _vue.default.extend(_Button.default);
+
+  var _vm = new _Constructor({
+    propsData: {
+      icon: 'setting',
+      loading: true
+    }
+  });
+
+  _vm.$mount();
+
+  var _useElement = _vm.$el.querySelector('use');
+
+  var _href = _useElement.getAttribute('xlink:href');
+
+  expect(_href).to.eq('#i-loading');
+
+  _vm.$el.remove(); //删除button元素
+
+
+  _vm.$destroy(); //删除button对象
+
+} //用例3
+
+{
+  var div = document.createElement('div');
+  document.body.appendChild(div);
+
+  var _Constructor2 = _vue.default.extend(_Button.default);
+
+  var _vm2 = new _Constructor2({
+    propsData: {
+      icon: 'setting'
+    }
+  });
+
+  _vm2.$mount(div);
+
+  var svg = _vm2.$el.querySelector('svg');
+
+  var _window$getComputedSt = window.getComputedStyle(svg),
+      order = _window$getComputedSt.order;
+
+  expect(order).to.eq('1');
+
+  _vm2.$el.remove(); //删除button元素
+
+
+  _vm2.$destroy(); //删除button对象
+
+}
+{
+  var _div = document.createElement('div');
+
+  document.body.appendChild(_div);
+
+  var _Constructor3 = _vue.default.extend(_Button.default);
+
+  var _vm3 = new _Constructor3({
+    propsData: {
+      icon: 'setting',
+      iconPosition: 'right'
+    }
+  });
+
+  _vm3.$mount(_div);
+
+  var _svg = _vm3.$el.querySelector('svg');
+
+  var _window$getComputedSt2 = window.getComputedStyle(_svg),
+      _order = _window$getComputedSt2.order;
+
+  expect(_order).to.eq('2');
+
+  _vm3.$el.remove(); //删除button元素
+
+
+  _vm3.$destroy(); //删除button对象
+
+} //用例4
+
+{
+  var _Constructor4 = _vue.default.extend(_Button.default);
+
+  var _vm4 = new _Constructor4({
+    propsData: {
+      icon: 'setting'
+    }
+  });
+
+  _vm4.$mount();
+
+  _vm4.$on('click', function () {
+    expect(1).to.eq(1); //希望这个函数被执行，这个方法是错的
+  });
+
+  var button = _vm4.$el;
+  button.click();
 }
 },{"vue":"node_modules/vue/dist/vue.common.js","./Button":"src/Button.vue","./Icon":"src/Icon.vue","./Button-group":"src/Button-group.vue","chai":"node_modules/chai/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

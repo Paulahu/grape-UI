@@ -21,15 +21,86 @@ import chai from 'chai'
 const expect = chai.expect
 
 //单元测试
+//用例1
 {
   const Constructor = Vue.extend(Button)  //把Button组件变成一个构造函数
-  const button = new Constructor({
+  const vm = new Constructor({
     propsData: {
       icon: 'setting'
     }
   })  //变成一个实例
-  button.$mount('#test')  //button实例挂载到test上
-  let useElement = button.$el.querySelector('use')
+  vm.$mount('#test')  //button实例挂载到test上
+  let useElement = vm.$el.querySelector('use')
   let href = useElement.getAttribute('xlink:href')
   expect(href).to.eq('#i-setting')
+  vm.$el.remove() //删除button元素
+  vm.$destroy()  //删除button对象
+}
+
+//用例2
+{
+  const Constructor = Vue.extend(Button)
+  const vm = new Constructor({
+    propsData: {
+      icon: 'setting',
+      loading: true
+    }
+  })
+  vm.$mount()
+  let useElement = vm.$el.querySelector('use')
+  let href = useElement.getAttribute('xlink:href')
+  expect(href).to.eq('#i-loading')
+  vm.$el.remove() //删除button元素
+  vm.$destroy()  //删除button对象
+}
+
+//用例3
+{
+  const div = document.createElement('div')
+  document.body.appendChild(div)
+  const Constructor = Vue.extend(Button)
+  const vm = new Constructor({
+    propsData: {
+      icon: 'setting'
+    }
+  })
+  vm.$mount(div)
+  let svg = vm.$el.querySelector('svg')
+  let {order} = window.getComputedStyle(svg)
+  expect(order).to.eq('1')
+  vm.$el.remove() //删除button元素
+  vm.$destroy()  //删除button对象
+}
+{
+  const div = document.createElement('div')
+  document.body.appendChild(div)
+  const Constructor = Vue.extend(Button)
+  const vm = new Constructor({
+    propsData: {
+      icon: 'setting',
+      iconPosition: 'right'
+    }
+  })
+  vm.$mount(div)
+  let svg = vm.$el.querySelector('svg')
+  let {order} = window.getComputedStyle(svg)
+  expect(order).to.eq('2')
+  vm.$el.remove() //删除button元素
+  vm.$destroy()  //删除button对象
+}
+
+//用例4
+{
+  const Constructor = Vue.extend(Button)
+  const vm = new Constructor({
+    propsData: {
+      icon: 'setting',
+    }
+  })
+  vm.$mount()
+  vm.$on('click',function () {
+    expect(1).to.eq(1)  //希望这个函数被执行，这个方法是错的
+  })
+  let button = vm.$el
+  button.click()
 }
