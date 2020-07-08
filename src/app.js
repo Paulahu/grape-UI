@@ -17,8 +17,10 @@ new Vue({
 })
 
 import chai from 'chai'
+import spies from 'chai-spies'
 
 const expect = chai.expect
+chai.use(spies)
 
 //单元测试
 //用例1
@@ -98,9 +100,9 @@ const expect = chai.expect
     }
   })
   vm.$mount()
-  vm.$on('click',function () {
-    expect(1).to.eq(1)  //希望这个函数被执行，这个方法是错的
-  })
+  let spy = chai.spy(function () {})
+  vm.$on('click',spy) //希望这个函数执行
   let button = vm.$el
   button.click()
+  expect(spy).to.have.been.called()
 }
