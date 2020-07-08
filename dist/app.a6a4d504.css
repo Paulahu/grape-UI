@@ -59,7 +59,9 @@
 }
 .g-button-group > .g-button[data-v-8575a6] {
     border-radius: 0;
-    margin-left: -1px;
+}
+.g-button-group > .g-button[data-v-8575a6]:not(:first-child) {
+      margin-left: -1px;
 }
 .g-button-group > .g-button[data-v-8575a6]:first-child {
       border-top-left-radius: var(--border-radius);
