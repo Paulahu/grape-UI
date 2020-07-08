@@ -16,9 +16,20 @@ new Vue({
   }
 })
 
+import chai from 'chai'
+
+const expect = chai.expect
+
 //单元测试
 {
   const Constructor = Vue.extend(Button)  //把Button组件变成一个构造函数
-  const button = new Constructor()  //变成一个实例
+  const button = new Constructor({
+    propsData: {
+      icon: 'setting'
+    }
+  })  //变成一个实例
   button.$mount('#test')  //button实例挂载到test上
+  let useElement = button.$el.querySelector('use')
+  let href = useElement.getAttribute('xlink:href')
+  expect(href).to.eq('#i-setting')
 }
