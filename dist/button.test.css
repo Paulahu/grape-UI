@@ -1,0 +1,55 @@
+.g-icon[data-v-b5dce8] {
+  width: 1em;
+  height: 1em;
+}
+
+@keyframes spin-data-v-a149cc {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+.g-button[data-v-a149cc] {
+  font-size: var(--font-size);
+  height: var(--button-height);
+  padding: 0 1em;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background: var(--button-bg);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: top;
+  text-align: center;
+  line-height: 1;
+}
+.g-button[data-v-a149cc]:hover {
+    border-color: var(--border-color-hover);
+}
+.g-button[data-v-a149cc]:active {
+    background-color: var(--button-active-bg);
+}
+.g-button[data-v-a149cc]:focus {
+    outline: none;
+}
+.g-button > .icon[data-v-a149cc] {
+    order: 1;
+    margin-right: .3em;
+}
+.g-button > .content[data-v-a149cc] {
+    order: 2;
+}
+.g-button.icon-right > .icon[data-v-a149cc] {
+    order: 2;
+    margin-left: .3em;
+    margin-right: 0;
+}
+.g-button.icon-right > .content[data-v-a149cc] {
+    order: 1;
+}
+.g-button > .loading[data-v-a149cc] {
+    animation: spin-data-v-a149cc linear 1.5s infinite;
+}
+
