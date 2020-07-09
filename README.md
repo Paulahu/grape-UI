@@ -1,5 +1,5 @@
 <div align="center">
-    <img width="200" src="https://github.com/Paulahu/grape-UI/src/logo.png">
+    <img width="200" src="https://github.com/Paulahu/grape-UI/logo.png">
 </div>
 
 <div align="center">
@@ -9,8 +9,6 @@ An easy UI components based on Vue.
 [![Build Status](https://travis-ci.org/Paulahu/grape-UI.svg?branch=master)](https://travis-ci.org/Paulahu/grape-UI)
 
 </div>
-
-
 
 
 
