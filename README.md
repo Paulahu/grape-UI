@@ -53,7 +53,7 @@ yarn add grape-ui
 ```
 
 ### 3. 引入grape-ui
-```
+```javascript
 import { Button, Icon, ButtonGroup } from 'grape-ui'
 import 'grape-ui/dist/index.css'
 
@@ -65,10 +65,6 @@ export default {
 }
 ```
 
-### 4. 引入svg
-```html
-<script src="//at.alicdn.com/t/font_1922912_mvirwbd6y5a.js"></script>
-```
 ## 现已支持
 
 - [x] Button（按钮）
