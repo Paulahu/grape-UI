@@ -72,8 +72,9 @@
     background-color: #448aff;
 }
 .color-primary[data-v-3c7161]:hover {
-    /*opacity: 0.8;*/
+    opacity: 0.8;
     border: 1px solid #448aff;
+    background-color: #448aff;
 }
 .color-info[data-v-3c7161] {
   background-color: #9e9e9e;
@@ -86,6 +87,7 @@
 .color-info[data-v-3c7161]:hover {
     opacity: 0.8;
     border: 1px solid #9e9e9e;
+    background-color: #9e9e9e;
 }
 .color-success[data-v-3c7161] {
   background-color: #4caf50;
@@ -98,6 +100,7 @@
 .color-success[data-v-3c7161]:hover {
     opacity: 0.8;
     border: 1px solid #4caf50;
+    background-color: #4caf50;
 }
 .color-warning[data-v-3c7161] {
   background-color: #ff9800;
@@ -110,6 +113,7 @@
 .color-warning[data-v-3c7161]:hover {
     opacity: 0.8;
     border: 1px solid #ff9800;
+    background-color: #ff9800;
 }
 .color-danger[data-v-3c7161] {
   background-color: #ff5722;
@@ -122,6 +126,7 @@
 .color-danger[data-v-3c7161]:hover {
     opacity: 0.8;
     border: 1px solid #ff5722;
+    background-color: #ff5722;
 }
 .color-text[data-v-3c7161] {
   background: #fff;

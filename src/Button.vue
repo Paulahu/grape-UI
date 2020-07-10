@@ -152,8 +152,9 @@
       background-color: $color-primary;
     }
     &:hover{
-      /*opacity: 0.8;*/
+      opacity: 0.8;
       border:1px solid $color-primary;
+      background-color: $color-primary;
     }
   }
   .color-info {
@@ -166,6 +167,7 @@
     &:hover{
       opacity: 0.8;
       border:1px solid $color-info;
+      background-color: $color-info;
     }
   }
   .color-success {
@@ -178,6 +180,7 @@
     &:hover{
       opacity: 0.8;
       border:1px solid $color-success;
+      background-color: $color-success;
     }
   }
   .color-warning {
@@ -190,6 +193,7 @@
     &:hover{
       opacity: 0.8;
       border:1px solid $color-warning;
+      background-color: $color-warning;
     }
   }
   .color-danger {
@@ -202,6 +206,7 @@
     &:hover{
       opacity: 0.8;
       border:1px solid $color-danger;
+      background-color: $color-danger;
     }
   }
   .color-text {
