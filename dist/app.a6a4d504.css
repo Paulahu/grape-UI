@@ -40,18 +40,18 @@
 }
 .g-button > .icon[data-v-3c7161] {
     order: 1;
-    margin-right: .3em;
 }
 .g-button > .content[data-v-3c7161] {
     order: 2;
+    margin-left: .3em;
 }
 .g-button.icon-right > .icon[data-v-3c7161] {
     order: 2;
-    margin-left: .3em;
-    margin-right: 0;
 }
 .g-button.icon-right > .content[data-v-3c7161] {
     order: 1;
+    margin-right: .3em;
+    margin-left: 0;
 }
 .g-button > .loading[data-v-3c7161] {
     animation: spin-data-v-3c7161 linear 1.5s infinite;
@@ -59,6 +59,9 @@
 .g-button[disabled][data-v-3c7161] {
     opacity: 0.5;
     cursor: not-allowed;
+}
+.g-button[class*=i-] > div[data-v-3c7161] {
+    color: red;
 }
 .is-round[data-v-3c7161] {
   border-radius: 10rem;

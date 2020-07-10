@@ -114,22 +114,22 @@
 
     > .icon {
       order: 1;
-      margin-right: .3em;
     }
 
     > .content {
       order: 2;
+      margin-left: .3em;
     }
 
     &.icon-right {
       > .icon {
         order: 2;
-        margin-left: .3em;
-        margin-right: 0;
       }
 
       > .content {
         order: 1;
+        margin-right: .3em;
+        margin-left: 0;
       }
     }
 
@@ -139,6 +139,9 @@
     &[disabled]{
       opacity: 0.5;
       cursor: not-allowed;
+    }
+    &[class*=i-] > div{
+      color:red;
     }
   }
   .is-round {

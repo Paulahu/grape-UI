@@ -12509,7 +12509,7 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("svg", { staticClass: "g-icon" }, [
-    _c("use", { attrs: { "xlink:href": "#i-" + _vm.name } })
+    _c("use", { attrs: { "xlink:href": "#" + _vm.name } })
   ])
 }
 var staticRenderFns = []
@@ -24016,7 +24016,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51190" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52501" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
