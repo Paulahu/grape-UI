@@ -1,5 +1,8 @@
 ---
 title:介绍
+date:2020-1-1
+tags:vue
+sidebar:'auto'
 ---
 
 
@@ -9,8 +12,6 @@ title:介绍
 [![npm](https://img.shields.io/npm/v/grape-ui?style=flat)](https://www.npmjs.com/package/grape-ui-test)
 ![NPM](https://img.shields.io/npm/l/grape-ui)
 
-
-An easy UI components based on Vue.
 
 
 

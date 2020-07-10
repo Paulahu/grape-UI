@@ -1,5 +1,8 @@
 ---
 title:安装
+date:2020-1-1
+tags:vue
+sidebar:'auto'
 ---
 
 # 安装

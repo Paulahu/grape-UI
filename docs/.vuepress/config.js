@@ -1,10 +1,11 @@
 module.exports = {
-  base: "/grape-UI/",
+  base: '/grape-UI/',
   title: 'grape-UI',
   description: 'An easy UI components based on Vue.',
-  theme: 'reco',
+  // theme: 'reco',
   themeConfig: {
     logo: '/grapes.png',
+    author: 'Paula Hu',
     search: true,
     searchMaxSuggestions: 10,
     nav: [
@@ -15,37 +16,47 @@ module.exports = {
     ],
     sidebar: [
       {
-        title: '介绍',
-        collapsable: false,
-        children: ['/introduce/guide']
-      },
-      {
-      title: '入门',
+      title: '介绍',
       collapsable: false,
       children: [
-        '/install/',
-        '/get-started/',
-      ]
-    },
+        '/introduce/',
+      ]},
       {
-        title: '组件',
+        title: '入门',
         collapsable: false,
         children: [
-          "/components/button",
-          "/components/input",
-          "/components/tabs",
-          "/components/grid",
-          "/components/layout",
-          "/components/popover",
-          "/components/collapse",
-          "/components/toast"
+          '/install/',
+          '/get-started/',
         ]
-      }],
-       // sidebar: 'auto',
+      }]
 
-  },
-  plugins: {
-    "vuepress-plugin-auto-sidebar": {}
+    // sidebar: [
+    //   {
+    //     title: '介绍',
+    //     collapsable: false,
+    //     children: ['/introduce/']
+    //   },
+    //   {
+    //   title: '入门',
+    //   collapsable: false,
+    //   children: [
+    //     '/install/',
+    //     '/get-started/',
+    //   ]
+    // },
+    //   {
+    //     title: '组件',
+    //     collapsable: false,
+    //     children: [
+    //       "/components/button",
+    //       "/components/input",
+    //       "/components/tabs",
+    //       "/components/grid",
+    //       "/components/layout",
+    //       "/components/popover",
+    //       "/components/collapse",
+    //       "/components/toast"
+    //     ]
+    //   }],
   }
-
 }
