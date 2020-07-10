@@ -39,7 +39,7 @@
 </head>
 <body>
 <div id="app">
-  <g-button :loading="loading1" @click="loading1=!loading1">按钮</g-button>
+  <g-button type="info" :loading="loading1" @click="loading1=!loading1" round>默认按钮</g-button>
   <g-button icon="setting" :loading="loading2" @click="loading2=!loading2">
     按钮
   </g-button>
@@ -50,6 +50,21 @@
     <g-button icon="left">上一页</g-button>
     <g-button icon="right" icon-position="right">下一页</g-button>
   </g-button-group>
+
+  <g-button >按钮</g-button>
+  <g-button type="text" >按钮</g-button>
+  <g-button type="info">按钮</g-button>
+  <g-button type="primary">按钮</g-button>
+  <g-button type="success" simple>按钮</g-button>
+  <g-button type="warning" simple>按钮</g-button>
+  <g-button type="danger" simple>按钮</g-button>
+  <g-button type="default" simple></g-button>
+  <g-button type="default" round></g-button>
+  <g-button type="default" simple round></g-button>
+
+  <g-button type="info" round icon="setting"></g-button>
+  <g-button type="success"  round></g-button>
+  <g-button type="warning"  round ></g-button>
   <div id="test"></div>
 </div>
 <script src="src/app.js"></script>

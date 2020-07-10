@@ -12557,16 +12557,8 @@ var _Icon = _interopRequireDefault(require("./Icon"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var _default = {
   name: 'Button.vue',
   components: {
@@ -12581,11 +12573,37 @@ var _default = {
     },
     iconPosition: {
       type: String,
-      default: "left",
+      default: 'left',
       validator: function validator(value) {
         console.log(value);
         return value === 'left' || value === 'right';
       }
+    },
+    type: {
+      type: String,
+      default: 'default',
+      validator: function validator(value) {
+        return value === 'default' || value === 'primary' || value === 'info' || value === 'success' || value === 'warning' || value === 'danger' || value === 'text';
+      }
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    simple: {
+      type: Boolean,
+      default: false
+    },
+    round: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    classes: function classes() {
+      var _ref;
+
+      return _ref = {}, _defineProperty(_ref, "icon-".concat(this.iconPosition), true), _defineProperty(_ref, "color-".concat(this.type), !this.simple), _defineProperty(_ref, "simple-".concat(this.type), this.simple), _defineProperty(_ref, "is-round", this.round), _ref;
     }
   }
 };
@@ -12599,7 +12617,6 @@ exports.default = _default;
         /* template */
         Object.assign($3c7161, (function () {
           var render = function() {
-  var _obj
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
@@ -12607,7 +12624,8 @@ exports.default = _default;
     "button",
     {
       staticClass: "g-button",
-      class: ((_obj = {}), (_obj["icon-" + _vm.iconPosition] = true), _obj),
+      class: _vm.classes,
+      attrs: { disabled: _vm.disabled },
       on: {
         click: function($event) {
           return _vm.$emit("click")
@@ -23998,7 +24016,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52491" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51190" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

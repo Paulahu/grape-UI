@@ -1,8 +1,5 @@
 ---
 title:介绍
-date:2020-1-1
-tags:vue
-sidebar:'auto'
 ---
 
 
