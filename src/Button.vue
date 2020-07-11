@@ -94,12 +94,12 @@
   }
 
   .g-button {
-    font-size: var(--font-size);
-    height: var(--button-height);
+    font-size: $font-size;
+    height: $button-height;
     padding: 0.4em 1.1em;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
-    background: var(--button-bg);
+    border-radius: $border-radius;
+    border: 1px solid $border-color;
+    background: $button-bg;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -110,8 +110,8 @@
     font-weight: 500;
     transition: .1s;
     &:active {
-      border-color: var(--border-color-hover);
-      background-color: var(--button-active-bg);
+      border-color: $border-color-hover;
+      background-color: $button-active-bg;
     }
 
     &:focus {
@@ -239,9 +239,6 @@
     border: 1px solid $color-info;
     color: $color-info;
     &:active{
-      background-color: $color-info;
-    }
-    &:hover{
       background-color: $color-info;
       opacity: 0.8;
       border:1px solid $color-info;

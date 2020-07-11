@@ -2,7 +2,6 @@ module.exports = {
   base: '/grape-UI/',
   title: 'grape-UI',
   description: 'An easy UI components based on Vue.',
-  // theme: 'reco',
   themeConfig: {
     logo: '/grapes.png',
     author: 'Paula Hu',
