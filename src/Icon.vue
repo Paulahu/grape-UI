@@ -16,5 +16,8 @@
   .g-icon {
     width: 1em;
     height: 1em;
+    & > [herf*="i-"] {
+      color:red;
+    }
   }
 </style>

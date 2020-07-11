@@ -12597,13 +12597,22 @@ var _default = {
     round: {
       type: Boolean,
       default: false
+    },
+    circle: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
     classes: function classes() {
       var _ref;
 
-      return _ref = {}, _defineProperty(_ref, "icon-".concat(this.iconPosition), true), _defineProperty(_ref, "color-".concat(this.type), !this.simple), _defineProperty(_ref, "simple-".concat(this.type), this.simple), _defineProperty(_ref, "is-round", this.round), _ref;
+      return _ref = {}, _defineProperty(_ref, "icon-".concat(this.iconPosition), true), _defineProperty(_ref, "color-".concat(this.type), !this.simple), _defineProperty(_ref, "simple-".concat(this.type), this.simple), _defineProperty(_ref, "is-round", this.round), _defineProperty(_ref, "is-circle", this.circle), _ref;
+    },
+    contentClass: function contentClass() {
+      return {
+        "content-margin": !this.icon
+      };
     }
   }
 };
@@ -12644,7 +12653,12 @@ exports.default = _default;
           })
         : _vm._e(),
       _vm._v(" "),
-      _c("div", { staticClass: "content" }, [_vm._t("default")], 2)
+      _c(
+        "div",
+        { staticClass: "content", class: _vm.contentClass },
+        [_vm._t("default")],
+        2
+      )
     ],
     1
   )
@@ -24016,7 +24030,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52501" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60461" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

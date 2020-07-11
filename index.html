@@ -41,14 +41,14 @@
 <div id="app">
   <g-button type="info" :loading="loading1" @click="loading1=!loading1" round>默认按钮</g-button>
   <g-button icon="i-setting" :loading="loading2" @click="loading2=!loading2">
-    按钮
+    按钮11
   </g-button>
   <g-button icon="i-setting" icon-position="right" :loading="loading3" @click="loading3=!loading3">
-    按钮
+    按钮22
   </g-button>
   <g-button-group>
-    <g-button icon="left">上一页</g-button>
-    <g-button icon="right" icon-position="right">下一页</g-button>
+    <g-button icon="i-left">上一页</g-button>
+    <g-button icon="i-right" icon-position="right">下一页</g-button>
   </g-button-group>
 
   <g-button >按钮</g-button>
@@ -62,12 +62,13 @@
   <g-button type="default" round></g-button>
   <g-button type="default" simple round></g-button>
 
-  <g-button type="info" icon="setting"></g-button>
-  <g-button type="success"  round></g-button>
-  <g-button type="warning"  round ></g-button>
+  <g-button type="info" icon="i-setting" circle></g-button>
+  <g-button type="success"  icon="i-thumb-up" circle></g-button>
+  <g-button type="warning"  icon="i-download" circle ></g-button>
+  <g-button type="danger"  icon="i-delete" circle ></g-button>
   <div id="test"></div>
 </div>
 <script src="src/app.js"></script>
-<script src="//at.alicdn.com/t/font_1922912_mvirwbd6y5a.js"></script>
+<script src="//at.alicdn.com/t/font_1922912_vtxwjbfnf88.js"></script>
 </body>
 </html>

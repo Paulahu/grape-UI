@@ -1,8 +1,8 @@
 <template>
-  <button class="g-button" :class="classes" @click="$emit('click')"  :disabled="disabled">
-    <g-icon :name="icon" v-if="icon && !loading" class="icon"></g-icon>
-    <g-icon name="loading" class="icon loading" v-if="loading"></g-icon>
-    <div class="content">
+  <button class="g-button" :class="classes" @click="$emit('click')"  :disabled="disabled" >
+    <g-icon :name="icon" v-if="icon && !loading" class="icon" ></g-icon>
+    <g-icon name="loading" class="icon loading" v-if="loading" ></g-icon>
+    <div class="content" :class="contentClass">
       <slot></slot>
     </div>
   </button>
@@ -57,6 +57,10 @@
       round: {
         type: Boolean,
         default: false
+      },
+      circle: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {
@@ -66,6 +70,12 @@
           [`color-${this.type}`]: !this.simple,
           [`simple-${this.type}`]: this.simple,
           "is-round": this.round,
+          "is-circle": this.circle,
+        }
+      },
+      contentClass() {
+        return {
+          "content-margin": !this.icon
         }
       }
     }
@@ -99,12 +109,8 @@
     cursor: pointer;
     font-weight: 500;
     transition: .1s;
-    &:hover {
-      border-color: var(--border-color-hover);
-      background-color: var(--button-active-bg);
-    }
-
     &:active {
+      border-color: var(--border-color-hover);
       background-color: var(--button-active-bg);
     }
 
@@ -140,12 +146,22 @@
       opacity: 0.5;
       cursor: not-allowed;
     }
-    &[class*=i-] > div{
-      color:red;
+    & > .content-margin {
+      margin-left: 0;
     }
   }
   .is-round {
     border-radius: 10rem;
+  }
+  .is-circle {
+    border-radius: 50%;
+    padding: .6em;
+    & > .icon {
+      fill: #fff;
+    }
+    & > .content {
+      display: none;
+    }
   }
   .color-primary {
     background-color: $color-primary;
@@ -153,11 +169,8 @@
     color: $color;
     &:active{
       background-color: $color-primary;
-    }
-    &:hover{
       opacity: 0.8;
       border:1px solid $color-primary;
-      background-color: $color-primary;
     }
   }
   .color-info {
@@ -166,11 +179,8 @@
     color: $color;
     &:active{
       background-color: $color-info;
-    }
-    &:hover{
       opacity: 0.8;
       border:1px solid $color-info;
-      background-color: $color-info;
     }
   }
   .color-success {
@@ -179,11 +189,8 @@
     color: $color;
     &:active{
       background-color: $color-success;
-    }
-    &:hover{
       opacity: 0.8;
       border:1px solid $color-success;
-      background-color: $color-success;
     }
   }
   .color-warning {
@@ -192,11 +199,8 @@
     color: $color;
     &:active{
       background-color: $color-warning;
-    }
-    &:hover{
       opacity: 0.8;
       border:1px solid $color-warning;
-      background-color: $color-warning;
     }
   }
   .color-danger {
@@ -205,11 +209,8 @@
     color: $color;
     &:active{
       background-color: $color-danger;
-    }
-    &:hover{
       opacity: 0.8;
       border:1px solid $color-danger;
-      background-color: $color-danger;
     }
   }
   .color-text {
@@ -227,9 +228,6 @@
     border: 1px solid $color-primary;
     color: $color-primary;
     &:active{
-      background-color: $color-primary;
-    }
-    &:hover{
       background-color: $color-primary;
       opacity: 0.8;
       border:1px solid $color-primary;
@@ -256,9 +254,6 @@
     color: $color-success;
     &:active{
       background-color: $color-success;
-    }
-    &:hover{
-      background-color: $color-success;
       opacity: 0.8;
       border:1px solid $color-success;
       color: $color;
@@ -270,9 +265,6 @@
       color: $color-warning;
       &:active{
         background-color: $color-warning;
-      }
-      &:hover{
-        background-color: $color-warning;
         opacity: 0.8;
         border:1px solid $color-warning;
         color: $color;
@@ -283,9 +275,6 @@
     border: 1px solid $color-danger;
     color: $color-danger;
     &:active{
-      background-color: $color-danger;
-    }
-    &:hover{
       background-color: $color-danger;
       opacity: 0.8;
       border:1px solid $color-danger;
