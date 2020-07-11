@@ -6,7 +6,6 @@ import ButtonGroup from './Button-group'
 Vue.component('g-button',Button)
 Vue.component('g-icon',Icon)
 Vue.component('g-button-group',ButtonGroup)
-
 new Vue({
   el: '#app',
   data: {

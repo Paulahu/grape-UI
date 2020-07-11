@@ -201,3 +201,19 @@ title:Button-按钮
 </script>
 
 ```
+## 参数说明
+<br>
+ 
+ | 参数 | 说明| 类型  |   可选值| 默认值     |
+ | :---       |    :---   |    :--- |    :--- |    :--- |
+ | type  | 按钮类型  | string   | primary / success / warning / danger / info / text      | default      |
+ | simple  | 是否简约按钮      | boolean   | ——  |  false  |
+ | round  | 是否圆角按钮      | boolean   | ——  |  false  |
+ | disabled  | 是否禁用按钮      | boolean   | ——  |  false  |
+ | loading  | 是否加载中状态      | boolean   | ——  |  false  |
+ | circle  | 是否使用小图标      | boolean   | ——  |  false  |
+ | icon  | 图标类名     | string   | ——  |  ——  |
+ | icon-position  | 图标位置    | string   | left/right  | left  |
+ 
+ 
+ 
