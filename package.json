@@ -8,7 +8,8 @@
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
     "dev": "vuepress dev docs --no-cache",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "build": "npx parcel build index.js --no-cache --no-minify"
   },
   "repository": {
     "type": "git",

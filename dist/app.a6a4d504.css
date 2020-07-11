@@ -1,6 +1,7 @@
 .g-icon[data-v-b5dce8] {
   width: 1em;
   height: 1em;
+  fill: #fff;
 }
 
 @keyframes spin-data-v-3c7161 {
@@ -60,18 +61,35 @@
 .g-button > .content-margin[data-v-3c7161] {
     margin-left: 0;
 }
+.is-loading[data-v-3c7161] {
+  opacity: .75;
+  cursor: wait;
+}
 .is-round[data-v-3c7161] {
   border-radius: 10rem;
 }
 .is-circle[data-v-3c7161] {
   border-radius: 50%;
-  padding: .6em;
+  padding: 8px;
 }
 .is-circle > .icon[data-v-3c7161] {
     fill: #fff;
 }
 .is-circle > .content[data-v-3c7161] {
     display: none;
+}
+.is-circle.color-default[data-v-3c7161] {
+  border-radius: 50%;
+  padding: 8px;
+}
+.is-circle.color-default > .icon[data-v-3c7161] {
+    fill: #2d2d2d;
+}
+.is-circle.color-default > .content[data-v-3c7161] {
+    display: none;
+}
+.color-default > .g-icon[data-v-3c7161] {
+  fill: #2d2d2d;
 }
 .color-primary[data-v-3c7161] {
   background-color: #448aff;

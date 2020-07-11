@@ -8,8 +8,7 @@ title:Button-按钮
 ## 基础用法
 基础的按钮用法。
 #### 预览
-# 
-
+<br>
  <ClientOnly>
    <button-demo></button-demo>
  </ClientOnly>
@@ -57,7 +56,7 @@ title:Button-按钮
 按钮不可用状态。
 
 #### 预览
-# 
+<br>
 
  <ClientOnly>
    <button-disabled></button-disabled>
@@ -89,7 +88,7 @@ title:Button-按钮
 没有边框和背景色的按钮。
 
 #### 预览
-# 
+<br>
 
  <ClientOnly>
    <button-text></button-text>
@@ -111,7 +110,7 @@ title:Button-按钮
 - 图标可选择位于文章的左边或右边
 
 #### 预览
-# 
+<br>
 
  <ClientOnly>
    <button-icons></button-icons>
@@ -119,14 +118,39 @@ title:Button-按钮
  
  #### 代码
  ```html
-
+<div>
+    <div class="row">
+      <g-button icon="setting" circle>默认按钮</g-button>
+      <g-button type="primary" icon="edit" circle>主要按钮</g-button>
+      <g-button type="info" icon="message" circle>信息按钮</g-button>
+      <g-button type="success" icon="tick" circle>成功按钮</g-button>
+      <g-button type="warning" icon="warning" circle>警告按钮</g-button>
+      <g-button type="danger" icon="delete" circle>危险按钮</g-button>
+    </div>
+    <div class="row">
+      <g-button icon="setting" >设置</g-button>
+      <g-button type="primary" icon="edit">编辑</g-button>
+      <g-button type="info" icon="message">消息</g-button>
+      <g-button type="success" icon="tick">完成</g-button>
+      <g-button type="warning" icon="warning">警告</g-button>
+      <g-button type="danger" icon="delete">删除</g-button>
+    </div>
+    <div class="row">
+      <g-button icon="setting" icon-position="right">设置</g-button>
+      <g-button type="primary" icon="edit"icon-position="right">编辑</g-button>
+      <g-button type="info" icon="message" icon-position="right">消息</g-button>
+      <g-button type="success" icon="tick" icon-position="right">完成</g-button>
+      <g-button type="warning" icon="warning" icon-position="right">警告</g-button>
+      <g-button type="danger" icon="delete" icon-position="right">删除</g-button>
+    </div>
+  </div>
 ```
 
 ## 组合按钮
 以组合按钮的方式出现，常用于多项选择的操作。
 - 使用`<g-button-group>` 标签来嵌套你的按钮。
 #### 预览
-# 
+<br>
 
  <ClientOnly>
    <button-group></button-group>
@@ -149,16 +173,31 @@ title:Button-按钮
 
 ## 加载按钮
 点击按钮后进行数据加载操作，在按钮上显示加载状态。
+- 可以点击按钮进入加载状态
+- 可以设置按钮默认为加载状态
 #### 预览
-# 
+<br>
 
  <ClientOnly>
    <button-loading></button-loading>
  </ClientOnly>
  
 #### 代码
-```html
-<div>
-    <g-button type="primary" icon="download" :loading="loading" @click="loading=true">下载</g-button>
-</div>
+```vue
+<templete>
+    <div>
+        <g-button type="primary" icon="download" :loading="loading" @click="loading=true">点击下载</g-button>
+        <g-button type="primary" icon="download" :loading="true" >加载中</g-button>
+    </div>
+</templete>
+<script>
+    export default {
+       data() {
+         return {
+           loading: false
+         }
+       }
+     }
+</script>
+
 ```

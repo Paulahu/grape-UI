@@ -69,6 +69,7 @@
           [`icon-${this.iconPosition}`]: true,
           [`color-${this.type}`]: !this.simple,
           [`simple-${this.type}`]: this.simple,
+          "is-loading": this.loading,
           "is-round": this.round,
           "is-circle": this.circle,
         }
@@ -150,18 +151,36 @@
       margin-left: 0;
     }
   }
+  .is-loading {
+    opacity: .75;
+    cursor: wait;
+  }
   .is-round {
     border-radius: 10rem;
   }
   .is-circle {
     border-radius: 50%;
-    padding: .6em;
+    padding: 8px;
     & > .icon {
       fill: #fff;
     }
     & > .content {
       display: none;
     }
+  }
+  .is-circle.color-default {
+    border-radius: 50%;
+    padding: 8px;
+    & > .icon {
+      fill: #2d2d2d;
+    }
+    & > .content {
+      display: none;
+    }
+
+  }
+  .color-default > .g-icon {
+    fill: #2d2d2d;
   }
   .color-primary {
     background-color: $color-primary;

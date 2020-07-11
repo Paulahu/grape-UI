@@ -1,6 +1,7 @@
 <template>
   <div>
-      <g-button type="primary" icon="download" :loading="loading" @click="loading=true">下载</g-button>
+    <g-button type="primary" icon="download" :loading="loading" @click="loading=true">点击下载</g-button>
+    <g-button type="primary" icon="download" :loading="true" >加载中</g-button>
   </div>
 
 
@@ -17,6 +18,11 @@
       'g-button': Button,
       'g-icon': Icon,
       'g-button-group': ButtonGroup
+    },
+    data() {
+      return {
+        loading: false
+      }
     }
   }
 </script>
