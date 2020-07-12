@@ -12807,6 +12807,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
 var _default = {
   name: 'Input.vue',
   components: {
@@ -12857,7 +12861,21 @@ exports.default = _default;
       _vm._v(" "),
       _c("input", {
         attrs: { type: "text", disabled: _vm.disabled, readonly: _vm.readonly },
-        domProps: { value: _vm.value }
+        domProps: { value: _vm.value },
+        on: {
+          change: function($event) {
+            return _vm.$emit("change", $event)
+          },
+          focus: function($event) {
+            return _vm.$emit("focus", $event)
+          },
+          input: function($event) {
+            return _vm.$emit("input", $event)
+          },
+          blur: function($event) {
+            return _vm.$emit("blur", $event)
+          }
+        }
       }),
       _vm._v(" "),
       _vm.error

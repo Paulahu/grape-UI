@@ -51,6 +51,9 @@
   <div class="box">
     <g-input value="王五" error="姓名不能少于两个字"></g-input>
   </div>
+  <div class="box">
+    <g-input value="王五" @change="inputChange"></g-input>
+  </div>
 
   <div class="box">
     <g-button type="info" :loading="loading" @click="loading=true" round icon="setting">默认按钮</g-button>
