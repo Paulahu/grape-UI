@@ -32,41 +32,56 @@
 
     body {
       font-size: var(--font-size);
+    }
+
+    .box {
+      margin: 20px 20px;
     }</style>
 <link rel="stylesheet" href="/app.a6a4d504.css"></head>
 <body>
 <div id="app">
-  <g-button type="info" :loading="loading" @click="loading=true" round="" icon="setting">默认按钮</g-button>
-  <g-button icon="setting" :loading="loading2" @click="loading2=!loading2">
-    按钮
-  </g-button>
-  <g-button icon="setting" icon-position="right" :loading="loading3" @click="loading3=!loading3">
-    按钮
-  </g-button>
-  <g-button-group>
-    <g-button icon="left">上一页</g-button>
-    <g-button icon="right" icon-position="right">下一页</g-button>
-  </g-button-group>
+  <div class="box">
+    <g-input value="张三"></g-input>
+    <g-input value="李四" disabled=""></g-input>
+    <g-input value="王五" readonly=""></g-input>
+  </div>
+  <div class="box">
+    <g-input value="王五" error="姓名不能少于两个字"></g-input>
+  </div>
 
-  <g-button>按钮</g-button>
-  <g-button type="text">按钮</g-button>
-  <g-button type="info" icon="edit">按钮</g-button>
-  <g-button type="primary" icon="edit">按钮</g-button>
-  <g-button type="success" simple="">按钮</g-button>
-  <g-button type="warning" simple="">按钮</g-button>
-  <g-button type="danger" simple="">按钮</g-button>
-  <g-button type="default" simple=""></g-button>
-  <g-button type="default" round=""></g-button>
-  <g-button type="default" simple="" round=""></g-button>
-
-  <g-button icon="edit" circle=""></g-button>
-  <g-button type="info" icon="edit" circle=""></g-button>
-  <g-button type="success" icon="thumb-up" circle=""></g-button>
-  <g-button type="warning" icon="download" circle=""></g-button>
-  <g-button type="danger" icon="delete" circle=""></g-button>
-  <div id="test"></div>
+  <div class="box">
+    <g-button type="info" :loading="loading" @click="loading=true" round="" icon="setting">默认按钮</g-button>
+    <g-button icon="setting" :loading="loading2" @click="loading2=!loading2">
+      按钮
+    </g-button>
+    <g-button icon="setting" icon-position="right" :loading="loading3" @click="loading3=!loading3">
+      按钮
+    </g-button>
+    <g-button-group>
+      <g-button icon="left" type="primary">上一页</g-button>
+      <g-button icon="right" icon-position="right" type="primary">下一页</g-button>
+    </g-button-group>
+  </div>
+  <div class="box">
+    <g-button>按钮</g-button>
+    <g-button type="text">按钮</g-button>
+    <g-button type="info" icon="edit">按钮</g-button>
+    <g-button type="primary" icon="edit">按钮</g-button>
+    <g-button type="success" simple="">按钮</g-button>
+    <g-button type="warning" simple="">按钮</g-button>
+    <g-button type="danger" simple="">按钮</g-button>
+  </div>
+  <div class="box">
+    <g-button icon="edit" circle=""></g-button>
+    <g-button type="info" icon="edit" circle=""></g-button>
+    <g-button type="success" icon="thumb-up" circle=""></g-button>
+    <g-button type="warning" icon="download" circle=""></g-button>
+    <g-button type="danger" icon="delete" circle=""></g-button>
+  </div>
 </div>
+
+
 <script src="/app.a6a4d504.js"></script>
-<script src="//at.alicdn.com/t/font_1922912_93im3gt1atj.js&quot;"></script>
+<script src="//at.alicdn.com/t/font_1922912_b0dxmqaez87.js&quot;"></script>
 </body>
 </html>
