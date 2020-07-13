@@ -12784,7 +12784,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/Input.vue":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/icon.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12792,7 +12792,75 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _Icon = _interopRequireDefault(require("./Icon"));
+require("./svg");
+
+//
+//
+//
+//
+var _default = {
+  name: 'Icon.vue',
+  props: ['name']
+};
+exports.default = _default;
+        var $e2c3c1 = exports.default || module.exports;
+      
+      if (typeof $e2c3c1 === 'function') {
+        $e2c3c1 = $e2c3c1.options;
+      }
+    
+        /* template */
+        Object.assign($e2c3c1, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("svg", { staticClass: "g-icon" }, [
+    _c("use", { attrs: { "xlink:href": "#i-" + _vm.name } })
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-e2c3c1",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$e2c3c1', $e2c3c1);
+          } else {
+            api.reload('$e2c3c1', $e2c3c1);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"./svg":"src/svg.js","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/Input.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _icon = _interopRequireDefault(require("./icon"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -12811,11 +12879,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
 var _default = {
-  name: 'Input.vue',
   components: {
-    'g-icon': _Icon.default
+    Icon: _icon.default
   },
+  name: "WheelsInput",
   props: {
     value: {
       type: String
@@ -12830,13 +12901,6 @@ var _default = {
     },
     error: {
       type: String
-    }
-  },
-  computed: {
-    classes: function classes() {
-      return {
-        'error': this.error
-      };
     }
   }
 };
@@ -12855,35 +12919,30 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "wrapper", class: _vm.classes },
+    { staticClass: "message", class: { error: _vm.error } },
     [
-      _c("label", [_vm._v("用户名")]),
-      _vm._v(" "),
       _c("input", {
         attrs: { type: "text", disabled: _vm.disabled, readonly: _vm.readonly },
         domProps: { value: _vm.value },
         on: {
           change: function($event) {
-            return _vm.$emit("change", $event)
-          },
-          focus: function($event) {
-            return _vm.$emit("focus", $event)
+            return _vm.$emit("change", $event.target.value)
           },
           input: function($event) {
-            return _vm.$emit("input", $event)
+            return _vm.$emit("input", $event.target.value)
+          },
+          focus: function($event) {
+            return _vm.$emit("focus", $event.target.value)
           },
           blur: function($event) {
-            return _vm.$emit("blur", $event)
+            return _vm.$emit("blur", $event.target.value)
           }
         }
       }),
       _vm._v(" "),
       _vm.error
         ? [
-            _c("g-icon", {
-              staticClass: "icon-error",
-              attrs: { name: "note" }
-            }),
+            _c("icon", { staticClass: "icon-error", attrs: { name: "note" } }),
             _vm._v(" "),
             _c("span", { staticClass: "error-message" }, [
               _vm._v(_vm._s(_vm.error))
@@ -12927,7 +12986,7 @@ render._withStripped = true
       
       }
     })();
-},{"./Icon":"src/Icon.vue","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"node_modules/assertion-error/index.js":[function(require,module,exports) {
+},{"./icon":"src/icon.vue","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"node_modules/assertion-error/index.js":[function(require,module,exports) {
 /*!
  * assertion-error
  * Copyright(c) 2013 Jake Luer <jake@qualiancy.com>
@@ -24176,7 +24235,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61945" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62531" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

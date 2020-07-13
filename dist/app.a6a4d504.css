@@ -231,6 +231,12 @@
       z-index: 1;
 }
 
+.g-icon[data-v-e2c3c1] {
+  width: 1em;
+  height: 1em;
+  fill: #fff;
+}
+
 .wrapper[data-v-437e54] {
   font-size: 12px;
   display: inline-flex;
