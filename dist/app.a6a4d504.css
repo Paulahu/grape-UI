@@ -294,12 +294,12 @@
 
 .col[data-v-c1bfe0] {
   height: 100px;
-  background-color: #3a5169;
   width: 50%;
-  border: 1px solid red;
   color: #fff;
   text-align: center;
   line-height: 100px;
+  padding: 0 10px;
+  margin-bottom: 10px;
 }
 .col.col-1[data-v-c1bfe0] {
     width: 4.16667%;
@@ -444,5 +444,9 @@
 }
 .col.offset-24[data-v-c1bfe0] {
     margin-left: 100%;
+}
+.col .wrapper[data-v-c1bfe0] {
+    border: 1px solid green;
+    background-color: deepskyblue;
 }
 

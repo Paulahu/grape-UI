@@ -1,12 +1,30 @@
 <template>
-  <div class="row">
+  <div class="row" :style="{marginLeft:gutter && -gutter/2+'px', marginRight: -gutter && gutter/2+'px'}">
     <slot></slot>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'Row.vue'
+    name: 'Row.vue',
+    props: {
+      gutter: {
+        type: [Number, String]
+      }
+    },
+    created() {
+      // console.log(this.$children)
+      //元素刚生成的时候没有儿子(内存里)
+      console.log('row created')
+    },
+    mounted() {
+      // console.log(this.$children)
+      //元素挂载到页面上就有儿子
+      console.log('row mounted')
+      this.$children.forEach(vm => {
+        vm.gutter = this.gutter
+      })
+    }
   }
 </script>
 

@@ -13034,7 +13034,27 @@ exports.default = void 0;
 //
 //
 var _default = {
-  name: 'Row.vue'
+  name: 'Row.vue',
+  props: {
+    gutter: {
+      type: [Number, String]
+    }
+  },
+  created: function created() {
+    // console.log(this.$children)
+    //元素刚生成的时候没有儿子(内存里)
+    console.log('row created');
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    // console.log(this.$children)
+    //元素挂载到页面上就有儿子
+    console.log('row mounted');
+    this.$children.forEach(function (vm) {
+      vm.gutter = _this.gutter;
+    });
+  }
 };
 exports.default = _default;
         var $b834ea = exports.default || module.exports;
@@ -13049,7 +13069,18 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [_vm._t("default")], 2)
+  return _c(
+    "div",
+    {
+      staticClass: "row",
+      style: {
+        marginLeft: _vm.gutter && -_vm.gutter / 2 + "px",
+        marginRight: -_vm.gutter && _vm.gutter / 2 + "px"
+      }
+    },
+    [_vm._t("default")],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13097,6 +13128,8 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 var _default = {
   name: 'Col.vue',
   props: {
@@ -13106,6 +13139,17 @@ var _default = {
     offset: {
       type: [Number, String]
     }
+  },
+  data: function data() {
+    return {
+      gutter: 0
+    };
+  },
+  created: function created() {
+    console.log('col created');
+  },
+  mounted: function mounted() {
+    console.log('col mounted');
   }
 };
 exports.default = _default;
@@ -13125,10 +13169,13 @@ exports.default = _default;
     "div",
     {
       staticClass: "col",
-      class: ["col-" + _vm.span, "offset && offset-" + _vm.offset]
+      class: ["col-" + _vm.span, "offset && offset-" + _vm.offset],
+      style: {
+        paddingLeft: _vm.gutter / 2 + "px",
+        paddingRight: _vm.gutter / 2 + "px"
+      }
     },
-    [_vm._t("default")],
-    2
+    [_c("div", { staticClass: "wrapper" }, [_vm._t("default")], 2)]
   )
 }
 var staticRenderFns = []
