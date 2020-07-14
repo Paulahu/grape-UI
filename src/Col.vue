@@ -1,5 +1,5 @@
 <template>
-  <div class="col" :class="[`col-${span}`]">
+  <div class="col" :class="[`col-${span}`,`offset && offset-${offset}`]">
     <slot></slot>
   </div>
 </template>
@@ -9,6 +9,9 @@
     name: 'Col.vue',
     props: {
       span: {
+        type: [Number, String]
+      },
+      offset: {
         type: [Number, String]
       }
     }
@@ -29,6 +32,13 @@
    @for $n from 1 through 24 {
      &.#{$class-prefix}#{$n} {
        width: ($n / 24) * 100%;
+     }
+   }
+
+   $class-prefix: offset-;
+   @for $n from 1 through 24 {
+     &.#{$class-prefix}#{$n} {
+       margin-left: ($n / 24) * 100%;
      }
    }
  }

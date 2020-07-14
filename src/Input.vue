@@ -61,6 +61,7 @@
 
 <style scoped lang="scss">
   @import "global-scss";
+
   .wrapper {
     font-size: $box-fontsize;
     display: inline-flex;
