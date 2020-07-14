@@ -1,8 +1,8 @@
 <template>
-  <div class="col" :class="[`col-${span}`,`offset && offset-${offset}`]" :style="{paddingLeft: gutter/2+'px',paddingRight: gutter/2+'px'}">
-    <div class="wrapper">
+  <div class="col"
+       :class="colClass"
+       :style="colStyle">
       <slot></slot>
-    </div>
   </div>
 </template>
 
@@ -22,11 +22,20 @@
         gutter: 0
       }
     },
-    created() {
-      console.log('col created')
-    },
-    mounted() {
-      console.log('col mounted')
+    computed: {
+      colClass() {
+        return [
+          `col-${this.span}`,
+          `offset && offset-${this.offset}`
+        ]
+      },
+      colStyle() {
+        console.log('gutter 变了， 所以我也要变')
+        return {
+          paddingLeft: this.gutter/2+'px',
+          paddingRight: this.gutter/2+'px'
+        }
+      }
     }
   }
 </script>
@@ -40,7 +49,8 @@
    line-height: 100px;
    padding: 0 10px;
    margin-bottom: 10px;
-
+   background-color: dodgerblue;
+   border: 1px solid #fff;
    $class-prefix: col-;
    @for $n from 1 through 24 {
      &.#{$class-prefix}#{$n} {
@@ -53,11 +63,6 @@
      &.#{$class-prefix}#{$n} {
        margin-left: ($n / 24) * 100%;
      }
-   }
-
-   .wrapper {
-     border: 1px solid green;
-     background-color: deepskyblue;
    }
  }
 </style>

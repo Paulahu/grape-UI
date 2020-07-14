@@ -13040,6 +13040,15 @@ var _default = {
       type: [Number, String]
     }
   },
+  computed: {
+    rowStyle: function rowStyle() {
+      var gutter = this.gutter;
+      return {
+        marginLeft: gutter && -gutter / 2 + 'px',
+        marginRight: -gutter && gutter / 2 + 'px'
+      };
+    }
+  },
   created: function created() {
     // console.log(this.$children)
     //元素刚生成的时候没有儿子(内存里)
@@ -13071,13 +13080,7 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass: "row",
-      style: {
-        marginLeft: _vm.gutter && -_vm.gutter / 2 + "px",
-        marginRight: -_vm.gutter && _vm.gutter / 2 + "px"
-      }
-    },
+    { staticClass: "row", style: _vm.rowStyle },
     [_vm._t("default")],
     2
   )
@@ -13145,11 +13148,17 @@ var _default = {
       gutter: 0
     };
   },
-  created: function created() {
-    console.log('col created');
-  },
-  mounted: function mounted() {
-    console.log('col mounted');
+  computed: {
+    colClass: function colClass() {
+      return ["col-".concat(this.span), "offset && offset-".concat(this.offset)];
+    },
+    colStyle: function colStyle() {
+      console.log('gutter 变了， 所以我也要变');
+      return {
+        paddingLeft: this.gutter / 2 + 'px',
+        paddingRight: this.gutter / 2 + 'px'
+      };
+    }
   }
 };
 exports.default = _default;
@@ -13167,15 +13176,9 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass: "col",
-      class: ["col-" + _vm.span, "offset && offset-" + _vm.offset],
-      style: {
-        paddingLeft: _vm.gutter / 2 + "px",
-        paddingRight: _vm.gutter / 2 + "px"
-      }
-    },
-    [_c("div", { staticClass: "wrapper" }, [_vm._t("default")], 2)]
+    { staticClass: "col", class: _vm.colClass, style: _vm.colStyle },
+    [_vm._t("default")],
+    2
   )
 }
 var staticRenderFns = []
