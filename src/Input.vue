@@ -89,13 +89,13 @@
       }
     }
     &.error {
-       > input {
-         border-color: $color-danger;
-         &:focus {
-           box-shadow: inset 0 1px 3px $color-danger;
-         }
-       }
-     }
+      > input {
+        border-color: $color-danger;
+        &:focus {
+          box-shadow: inset 0 1px 3px $color-danger;
+        }
+      }
+    }
     .icon-error {
       fill: $color-danger;
       width: 1.4em;

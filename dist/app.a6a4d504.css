@@ -279,4 +279,12 @@
 .wrapper .error-message[data-v-437e54] {
     color: #ff5722;
 }
+.wrapper .icon-tip[data-v-437e54] {
+    fill: #4caf50;
+    width: 1.4em;
+    height: 1.4em;
+}
+.wrapper .tip-message[data-v-437e54] {
+    color: #4caf50;
+}
 

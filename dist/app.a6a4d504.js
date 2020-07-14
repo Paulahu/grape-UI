@@ -12882,13 +12882,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
 var _default = {
   components: {
     Icon: _icon.default
   },
-  name: "WheelsInput",
+  name: "Input.vue",
   props: {
     value: {
+      type: String
+    },
+    placeholder: {
       type: String
     },
     disabled: {
@@ -12901,6 +12909,17 @@ var _default = {
     },
     error: {
       type: String
+    },
+    tip: {
+      type: String
+    }
+  },
+  computed: {
+    classes: function classes() {
+      return {
+        'error': this.error,
+        'tip': this.tip
+      };
     }
   }
 };
@@ -12919,10 +12938,15 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "message", class: { error: _vm.error } },
+    { staticClass: "wrapper", class: { classes: _vm.classes } },
     [
       _c("input", {
-        attrs: { type: "text", disabled: _vm.disabled, readonly: _vm.readonly },
+        attrs: {
+          type: "text",
+          disabled: _vm.disabled,
+          readonly: _vm.readonly,
+          placeholder: _vm.placeholder
+        },
         domProps: { value: _vm.value },
         on: {
           change: function($event) {
@@ -12946,6 +12970,16 @@ exports.default = _default;
             _vm._v(" "),
             _c("span", { staticClass: "error-message" }, [
               _vm._v(_vm._s(_vm.error))
+            ])
+          ]
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.tip
+        ? [
+            _c("icon", { staticClass: "icon-tip", attrs: { name: "tick" } }),
+            _vm._v(" "),
+            _c("span", { staticClass: "tip-message" }, [
+              _vm._v(_vm._s(_vm.tip))
             ])
           ]
         : _vm._e()
@@ -24235,7 +24269,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62531" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50775" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
