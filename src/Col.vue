@@ -24,7 +24,7 @@
     },
     computed: {
       colClass() {
-        return [
+        return[
           `col-${this.span}`,
           `offset && offset-${this.offset}`
         ]
@@ -43,14 +43,13 @@
 <style scoped lang="scss">
  .col {
    height: 100px;
-   width: 50%;
    color: #fff;
    text-align: center;
    line-height: 100px;
    padding: 0 10px;
    margin-bottom: 10px;
    background-color: dodgerblue;
-   border: 1px solid #fff;
+   border:1px solid #fff;
    $class-prefix: col-;
    @for $n from 1 through 24 {
      &.#{$class-prefix}#{$n} {
