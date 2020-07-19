@@ -304,158 +304,158 @@
     justify-content: center;
 }
 
-.col[data-v-c1bfe0] {
-  height: 100px;
-  color: #fff;
-  text-align: center;
-  line-height: 100px;
-  padding: 0 10px;
-  margin-bottom: 10px;
-  background-color: dodgerblue;
-  border: 1px solid #fff;
-}
 .col.col-1[data-v-c1bfe0] {
-    width: 4.16667%;
+  width: 4.16667%;
 }
 .col.col-2[data-v-c1bfe0] {
-    width: 8.33333%;
+  width: 8.33333%;
 }
 .col.col-3[data-v-c1bfe0] {
-    width: 12.5%;
+  width: 12.5%;
 }
 .col.col-4[data-v-c1bfe0] {
-    width: 16.66667%;
+  width: 16.66667%;
 }
 .col.col-5[data-v-c1bfe0] {
-    width: 20.83333%;
+  width: 20.83333%;
 }
 .col.col-6[data-v-c1bfe0] {
-    width: 25%;
+  width: 25%;
 }
 .col.col-7[data-v-c1bfe0] {
-    width: 29.16667%;
+  width: 29.16667%;
 }
 .col.col-8[data-v-c1bfe0] {
-    width: 33.33333%;
+  width: 33.33333%;
 }
 .col.col-9[data-v-c1bfe0] {
-    width: 37.5%;
+  width: 37.5%;
 }
 .col.col-10[data-v-c1bfe0] {
-    width: 41.66667%;
+  width: 41.66667%;
 }
 .col.col-11[data-v-c1bfe0] {
-    width: 45.83333%;
+  width: 45.83333%;
 }
 .col.col-12[data-v-c1bfe0] {
-    width: 50%;
+  width: 50%;
 }
 .col.col-13[data-v-c1bfe0] {
-    width: 54.16667%;
+  width: 54.16667%;
 }
 .col.col-14[data-v-c1bfe0] {
-    width: 58.33333%;
+  width: 58.33333%;
 }
 .col.col-15[data-v-c1bfe0] {
-    width: 62.5%;
+  width: 62.5%;
 }
 .col.col-16[data-v-c1bfe0] {
-    width: 66.66667%;
+  width: 66.66667%;
 }
 .col.col-17[data-v-c1bfe0] {
-    width: 70.83333%;
+  width: 70.83333%;
 }
 .col.col-18[data-v-c1bfe0] {
-    width: 75%;
+  width: 75%;
 }
 .col.col-19[data-v-c1bfe0] {
-    width: 79.16667%;
+  width: 79.16667%;
 }
 .col.col-20[data-v-c1bfe0] {
-    width: 83.33333%;
+  width: 83.33333%;
 }
 .col.col-21[data-v-c1bfe0] {
-    width: 87.5%;
+  width: 87.5%;
 }
 .col.col-22[data-v-c1bfe0] {
-    width: 91.66667%;
+  width: 91.66667%;
 }
 .col.col-23[data-v-c1bfe0] {
-    width: 95.83333%;
+  width: 95.83333%;
 }
 .col.col-24[data-v-c1bfe0] {
-    width: 100%;
+  width: 100%;
 }
 .col.offset-1[data-v-c1bfe0] {
-    margin-left: 4.16667%;
+  margin-left: 4.16667%;
 }
 .col.offset-2[data-v-c1bfe0] {
-    margin-left: 8.33333%;
+  margin-left: 8.33333%;
 }
 .col.offset-3[data-v-c1bfe0] {
-    margin-left: 12.5%;
+  margin-left: 12.5%;
 }
 .col.offset-4[data-v-c1bfe0] {
-    margin-left: 16.66667%;
+  margin-left: 16.66667%;
 }
 .col.offset-5[data-v-c1bfe0] {
-    margin-left: 20.83333%;
+  margin-left: 20.83333%;
 }
 .col.offset-6[data-v-c1bfe0] {
-    margin-left: 25%;
+  margin-left: 25%;
 }
 .col.offset-7[data-v-c1bfe0] {
-    margin-left: 29.16667%;
+  margin-left: 29.16667%;
 }
 .col.offset-8[data-v-c1bfe0] {
-    margin-left: 33.33333%;
+  margin-left: 33.33333%;
 }
 .col.offset-9[data-v-c1bfe0] {
-    margin-left: 37.5%;
+  margin-left: 37.5%;
 }
 .col.offset-10[data-v-c1bfe0] {
-    margin-left: 41.66667%;
+  margin-left: 41.66667%;
 }
 .col.offset-11[data-v-c1bfe0] {
-    margin-left: 45.83333%;
+  margin-left: 45.83333%;
 }
 .col.offset-12[data-v-c1bfe0] {
-    margin-left: 50%;
+  margin-left: 50%;
 }
 .col.offset-13[data-v-c1bfe0] {
-    margin-left: 54.16667%;
+  margin-left: 54.16667%;
 }
 .col.offset-14[data-v-c1bfe0] {
-    margin-left: 58.33333%;
+  margin-left: 58.33333%;
 }
 .col.offset-15[data-v-c1bfe0] {
-    margin-left: 62.5%;
+  margin-left: 62.5%;
 }
 .col.offset-16[data-v-c1bfe0] {
-    margin-left: 66.66667%;
+  margin-left: 66.66667%;
 }
 .col.offset-17[data-v-c1bfe0] {
-    margin-left: 70.83333%;
+  margin-left: 70.83333%;
 }
 .col.offset-18[data-v-c1bfe0] {
-    margin-left: 75%;
+  margin-left: 75%;
 }
 .col.offset-19[data-v-c1bfe0] {
-    margin-left: 79.16667%;
+  margin-left: 79.16667%;
 }
 .col.offset-20[data-v-c1bfe0] {
-    margin-left: 83.33333%;
+  margin-left: 83.33333%;
 }
 .col.offset-21[data-v-c1bfe0] {
-    margin-left: 87.5%;
+  margin-left: 87.5%;
 }
 .col.offset-22[data-v-c1bfe0] {
-    margin-left: 91.66667%;
+  margin-left: 91.66667%;
 }
 .col.offset-23[data-v-c1bfe0] {
-    margin-left: 95.83333%;
+  margin-left: 95.83333%;
 }
 .col.offset-24[data-v-c1bfe0] {
-    margin-left: 100%;
+  margin-left: 100%;
+}
+.col .inside[data-v-c1bfe0] {
+  height: 50px;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  background: dodgerblue;
+  border: 1px solid #fff;
 }
 

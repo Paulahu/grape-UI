@@ -2,7 +2,9 @@
   <div class="col"
        :class="colClass"
        :style="colStyle">
+    <div class="inside">
       <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -42,14 +44,7 @@
 
 <style scoped lang="scss">
  .col {
-   height: 100px;
-   color: #fff;
-   text-align: center;
-   line-height: 100px;
-   padding: 0 10px;
-   margin-bottom: 10px;
-   background-color: dodgerblue;
-   border:1px solid #fff;
+
    $class-prefix: col-;
    @for $n from 1 through 24 {
      &.#{$class-prefix}#{$n} {
@@ -62,6 +57,16 @@
      &.#{$class-prefix}#{$n} {
        margin-left: ($n / 24) * 100%;
      }
+   }
+   .inside {
+     height: 50px;
+     color: #fff;
+     text-align: center;
+     line-height: 50px;
+     padding: 0 10px;
+     margin-bottom: 10px;
+     background: dodgerblue;
+     border:1px solid #fff;
    }
  }
 </style>

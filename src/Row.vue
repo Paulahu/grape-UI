@@ -1,6 +1,6 @@
 <template>
   <div class="row" :style="rowStyle" :class="rowClass">
-    <slot></slot>
+      <slot></slot>
   </div>
 </template>
 
@@ -24,7 +24,7 @@
         let {gutter} =this
         return {
           marginLeft:gutter && -gutter/2+'px',
-          marginRight: -gutter && gutter/2+'px'
+          marginRight: gutter && -gutter/2+'px'
         }
       },
       rowClass() {

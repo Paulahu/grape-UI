@@ -13052,7 +13052,7 @@ var _default = {
       var gutter = this.gutter;
       return {
         marginLeft: gutter && -gutter / 2 + 'px',
-        marginRight: -gutter && gutter / 2 + 'px'
+        marginRight: gutter && -gutter / 2 + 'px'
       };
     },
     rowClass: function rowClass() {
@@ -13144,6 +13144,8 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 var _default = {
   name: 'Col.vue',
   props: {
@@ -13188,8 +13190,7 @@ exports.default = _default;
   return _c(
     "div",
     { staticClass: "col", class: _vm.colClass, style: _vm.colStyle },
-    [_vm._t("default")],
-    2
+    [_c("div", { staticClass: "inside" }, [_vm._t("default")], 2)]
   )
 }
 var staticRenderFns = []
@@ -24482,7 +24483,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54913" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62930" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
