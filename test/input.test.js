@@ -65,18 +65,21 @@ describe('Input', () => {  // BDD 行为驱动测试(一种行为描述）
     afterEach(function () {
       vm.$destroy()
     })
-    it('支持 change/input/focus/blur 事件', function () {
-      ['change', 'input', 'focus', 'blur'].forEach(item => {
-          vm = new Constructor({}).$mount()
-          const callback = sinon.fake() //sinon是一个库，调用他的欺骗函数
-          vm.$on(item, callback)
-          //触发input的change事件
-          let event = new Event(item)
-          let inputElement = vm.$el.querySelector('input')
-          inputElement.dispatchEvent(event)
-          expect(callback).to.have.been.calledWith(event)  //期待回调调用，且同时传的第一个参数是event
-        }
-      )
-    })
+    it("支持 change/focus/input/blur 事件", () => {
+      ["change", "focus", "input", "blur"].forEach(eventName => {
+        vm = new Constructor({}).$mount();
+        const callback = sinon.fake();
+        vm.$on(eventName, callback);
+        // 模拟触发 eventName 事件
+        const event = new Event(eventName);
+        Object.defineProperty(event, "target", {
+          value: { value: "hi" },
+          enumerable: true
+        });
+        const inputElement = vm.$el.querySelector("input");
+        inputElement.dispatchEvent(event);
+        expect(callback).to.have.been.calledWith("hi");
+      });
+    });
   })
 })

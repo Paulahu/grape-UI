@@ -293,7 +293,7 @@
 
 .row[data-v-b834ea] {
   display: flex;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
 }
 .row.align-left[data-v-b834ea] {
     justify-content: flex-start;

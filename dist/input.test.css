@@ -1,4 +1,4 @@
-.g-icon[data-v-b5dce8] {
+.g-icon[data-v-e2c3c1] {
   width: 1em;
   height: 1em;
   fill: #fff;
@@ -32,6 +32,9 @@
       cursor: not-allowed;
       border-color: #666;
 }
+.wrapper > input.error[data-v-437e54] {
+      font-size: 12px;
+}
 .wrapper.error > input[data-v-437e54] {
     border-color: #ff5722;
 }
@@ -45,5 +48,13 @@
 }
 .wrapper .error-message[data-v-437e54] {
     color: #ff5722;
+}
+.wrapper .icon-tip[data-v-437e54] {
+    fill: #4caf50;
+    width: 1.4em;
+    height: 1.4em;
+}
+.wrapper .tip-message[data-v-437e54] {
+    color: #4caf50;
 }
 

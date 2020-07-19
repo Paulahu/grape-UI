@@ -13216,7 +13216,7 @@ var _default = {
       }
 
       if (obj.offset) {
-        array.push("col-".concat(str).concat(obj.offset));
+        array.push("offset-".concat(str).concat(obj.offset));
       }
 
       return array;

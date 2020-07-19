@@ -12475,7 +12475,7 @@ function patchScopedSlots (instance) {
   }
 }
 
-},{}],"../src/Icon.vue":[function(require,module,exports) {
+},{}],"../src/icon.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12494,14 +12494,14 @@ var _default = {
   props: ['name']
 };
 exports.default = _default;
-        var $b5dce8 = exports.default || module.exports;
+        var $e2c3c1 = exports.default || module.exports;
       
-      if (typeof $b5dce8 === 'function') {
-        $b5dce8 = $b5dce8.options;
+      if (typeof $e2c3c1 === 'function') {
+        $e2c3c1 = $e2c3c1.options;
       }
     
         /* template */
-        Object.assign($b5dce8, (function () {
+        Object.assign($e2c3c1, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -12517,7 +12517,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: "data-v-b5dce8",
+            _scopeId: "data-v-e2c3c1",
             functional: undefined
           };
         })());
@@ -12530,9 +12530,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$b5dce8', $b5dce8);
+            api.createRecord('$e2c3c1', $e2c3c1);
           } else {
-            api.reload('$b5dce8', $b5dce8);
+            api.reload('$e2c3c1', $e2c3c1);
           }
         }
 
@@ -12551,7 +12551,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _Icon = _interopRequireDefault(require("./Icon"));
+var _icon = _interopRequireDefault(require("./icon"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -12570,13 +12570,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
-  name: 'Input.vue',
   components: {
-    'g-icon': _Icon.default
+    Icon: _icon.default
   },
+  name: "Input.vue",
   props: {
     value: {
+      type: String
+    },
+    placeholder: {
       type: String
     },
     disabled: {
@@ -12589,12 +12600,16 @@ var _default = {
     },
     error: {
       type: String
+    },
+    tip: {
+      type: String
     }
   },
   computed: {
     classes: function classes() {
       return {
-        'error': this.error
+        'error': this.error,
+        'tip': this.tip
       };
     }
   }
@@ -12616,36 +12631,46 @@ exports.default = _default;
     "div",
     { staticClass: "wrapper", class: _vm.classes },
     [
-      _c("label", [_vm._v("用户名")]),
-      _vm._v(" "),
       _c("input", {
-        attrs: { type: "text", disabled: _vm.disabled, readonly: _vm.readonly },
+        attrs: {
+          type: "text",
+          disabled: _vm.disabled,
+          readonly: _vm.readonly,
+          placeholder: _vm.placeholder
+        },
         domProps: { value: _vm.value },
         on: {
           change: function($event) {
-            return _vm.$emit("change", $event)
-          },
-          focus: function($event) {
-            return _vm.$emit("focus", $event)
+            return _vm.$emit("change", $event.target.value)
           },
           input: function($event) {
-            return _vm.$emit("input", $event)
+            return _vm.$emit("input", $event.target.value)
+          },
+          focus: function($event) {
+            return _vm.$emit("focus", $event.target.value)
           },
           blur: function($event) {
-            return _vm.$emit("blur", $event)
+            return _vm.$emit("blur", $event.target.value)
           }
         }
       }),
       _vm._v(" "),
       _vm.error
         ? [
-            _c("g-icon", {
-              staticClass: "icon-error",
-              attrs: { name: "note" }
-            }),
+            _c("icon", { staticClass: "icon-error", attrs: { name: "note" } }),
             _vm._v(" "),
             _c("span", { staticClass: "error-message" }, [
               _vm._v(_vm._s(_vm.error))
+            ])
+          ]
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.tip
+        ? [
+            _c("icon", { staticClass: "icon-tip", attrs: { name: "tick" } }),
+            _vm._v(" "),
+            _c("span", { staticClass: "tip-message" }, [
+              _vm._v(_vm._s(_vm.tip))
             ])
           ]
         : _vm._e()
@@ -12686,7 +12711,7 @@ render._withStripped = true
       
       }
     })();
-},{"./Icon":"../src/Icon.vue","_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.common.js"}],"input.test.js":[function(require,module,exports) {
+},{"./icon":"../src/icon.vue","_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.common.js"}],"input.test.js":[function(require,module,exports) {
 "use strict";
 
 var _vue = _interopRequireDefault(require("vue"));
@@ -12756,17 +12781,22 @@ describe('Input', function () {
     afterEach(function () {
       vm.$destroy();
     });
-    it('支持 change/input/focus/blur 事件', function () {
-      ['change', 'input', 'focus', 'blur'].forEach(function (item) {
+    it("支持 change/focus/input/blur 事件", function () {
+      ["change", "focus", "input", "blur"].forEach(function (eventName) {
         vm = new Constructor({}).$mount();
-        var callback = sinon.fake(); //sinon是一个库，调用他的欺骗函数
+        var callback = sinon.fake();
+        vm.$on(eventName, callback); // 模拟触发 eventName 事件
 
-        vm.$on(item, callback); //触发input的change事件
-
-        var event = new Event(item);
-        var inputElement = vm.$el.querySelector('input');
+        var event = new Event(eventName);
+        Object.defineProperty(event, "target", {
+          value: {
+            value: "hi"
+          },
+          enumerable: true
+        });
+        var inputElement = vm.$el.querySelector("input");
         inputElement.dispatchEvent(event);
-        expect(callback).to.have.been.calledWith(event); //期待回调调用，且同时传的第一个参数是event
+        expect(callback).to.have.been.calledWith("hi");
       });
     });
   });
@@ -12799,7 +12829,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55078" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61397" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
