@@ -9,15 +9,26 @@
 </template>
 
 <script>
+  let validator = (value) => {
+    let keys = Object.keys(value)
+    let valid = true
+    keys.forEach(key => {
+      if (!['span', 'offset'].includes(key)) {
+        valid = false
+      }
+    })
+    return valid
+  }
+
   export default {
     name: 'Col.vue',
     props: {
-      span: {
-        type: [Number, String]
-      },
-      offset: {
-        type: [Number, String]
-      }
+      span: {type: [Number, String]},
+      offset: {type: [Number, String]},
+      ipad: {type: Object, validator,},
+      narrowPc: {type: Object, validator,},
+      pc: {type: Object, validator,},
+      widePc: {type: Object, validator,}
     },
     data() {
       return {
@@ -25,17 +36,22 @@
       }
     },
     computed: {
-      colClass() {
-        return[
-          `col-${this.span}`,
-          `offset && offset-${this.offset}`
+      colClass: function () {
+        let {span, offset, ipad, narrowPc, pc, widePc} = this
+        return [
+           `col-${span}`,
+           (offset && `offset-${offset}`),
+           (ipad && [`col-ipad-${ipad.span}`]),
+           (narrowPc && [`col-narrow-pc-${narrowPc.span}`]),
+           (pc && [`col-pc-${pc.span}`]),
+           (widePc && [`col-wide-pc-${widePc.span}`])
         ]
       },
       colStyle() {
         console.log('gutter 变了， 所以我也要变')
         return {
-          paddingLeft: this.gutter/2+'px',
-          paddingRight: this.gutter/2+'px'
+          paddingLeft: this.gutter / 2 + 'px',
+          paddingRight: this.gutter / 2 + 'px'
         }
       }
     }
@@ -43,30 +59,78 @@
 </script>
 
 <style scoped lang="scss">
- .col {
+  .col {
+    $class-prefix: col-;
+    @for $n from 1 through 24 {
+      &.#{$class-prefix}#{$n} {
+        width: ($n / 24) * 100%;
+      }
+    }
 
-   $class-prefix: col-;
-   @for $n from 1 through 24 {
-     &.#{$class-prefix}#{$n} {
-       width: ($n / 24) * 100%;
-     }
-   }
+    $class-prefix: offset-;
+    @for $n from 1 through 24 {
+      &.#{$class-prefix}#{$n} {
+        margin-left: ($n / 24) * 100%;
+      }
+    }
 
-   $class-prefix: offset-;
-   @for $n from 1 through 24 {
-     &.#{$class-prefix}#{$n} {
-       margin-left: ($n / 24) * 100%;
-     }
-   }
-   .inside {
-     height: 50px;
-     color: #fff;
-     text-align: center;
-     line-height: 50px;
-     padding: 0 10px;
-     margin-bottom: 10px;
-     background: dodgerblue;
-     border:1px solid #fff;
-   }
- }
+    .inside {
+      height: 50px;
+      color: #fff;
+      text-align: center;
+      line-height: 50px;
+      padding: 0 10px;
+      margin-bottom: 10px;
+      background: dodgerblue;
+      border: 1px solid #fff;
+    }
+
+    @media (min-width: 577px) and (max-width: 768px) {
+      $class-prefix: col-ipad-;
+      @for $n from 1 through 24 {
+        &.#{$class-prefix}#{$n} {
+          width: ($n / 24) * 100%;
+        }
+      }
+
+      $class-prefix: offset-ipad-;
+      @for $n from 1 through 24 {
+        &.#{$class-prefix}#{$n} {
+          margin-left: ($n / 24) * 100%;
+        }
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 992px) {
+      $class-prefix: col-narrow-pc-;
+      @for $n from 1 through 24 {
+        &.#{$class-prefix}#{$n} {
+          width: ($n / 24) * 100%;
+        }
+      }
+
+      $class-prefix: offset-narrow-pc-;
+      @for $n from 1 through 24 {
+        &.#{$class-prefix}#{$n} {
+          margin-left: ($n / 24) * 100%;
+        }
+      }
+    }
+
+    @media (min-width: 993px) and (max-width: 1200px) {
+      $class-prefix: col-wide-pc-;
+      @for $n from 1 through 24 {
+        &.#{$class-prefix}#{$n} {
+          width: ($n / 24) * 100%;
+        }
+      }
+
+      $class-prefix: offset-wide-pc-;
+      @for $n from 1 through 24 {
+        &.#{$class-prefix}#{$n} {
+          margin-left: ($n / 24) * 100%;
+        }
+      }
+    }
+  }
 </style>

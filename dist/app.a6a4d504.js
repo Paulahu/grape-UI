@@ -13136,6 +13136,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
 //
 //
 //
@@ -13146,6 +13147,17 @@ exports.default = void 0;
 //
 //
 //
+var validator = function validator(value) {
+  var keys = Object.keys(value);
+  var valid = true;
+  keys.forEach(function (key) {
+    if (!['span', 'offset'].includes(key)) {
+      valid = false;
+    }
+  });
+  return valid;
+};
+
 var _default = {
   name: 'Col.vue',
   props: {
@@ -13154,6 +13166,22 @@ var _default = {
     },
     offset: {
       type: [Number, String]
+    },
+    ipad: {
+      type: Object,
+      validator: validator
+    },
+    narrowPc: {
+      type: Object,
+      validator: validator
+    },
+    pc: {
+      type: Object,
+      validator: validator
+    },
+    widePc: {
+      type: Object,
+      validator: validator
     }
   },
   data: function data() {
@@ -13163,7 +13191,13 @@ var _default = {
   },
   computed: {
     colClass: function colClass() {
-      return ["col-".concat(this.span), "offset && offset-".concat(this.offset)];
+      var span = this.span,
+          offset = this.offset,
+          ipad = this.ipad,
+          narrowPc = this.narrowPc,
+          pc = this.pc,
+          widePc = this.widePc;
+      return ["col-".concat(span), offset && "offset-".concat(offset), ipad && ["col-ipad-".concat(ipad.span)], narrowPc && ["col-narrow-pc-".concat(narrowPc.span)], pc && ["col-pc-".concat(pc.span)], widePc && ["col-wide-pc-".concat(widePc.span)]];
     },
     colStyle: function colStyle() {
       console.log('gutter 变了， 所以我也要变');
@@ -24483,7 +24517,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62930" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59777" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
