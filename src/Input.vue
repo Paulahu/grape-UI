@@ -1,5 +1,5 @@
 <template>
-  <div :class="{classes}" class="wrapper">
+  <div :class="classes" class="wrapper">
     <input
       type="text"
       :value="value"
@@ -60,57 +60,66 @@
 </script>
 
 <style scoped lang="scss">
-  @import "global-scss";
   .wrapper {
-    font-size: $box-fontsize;
+    font-size: 12px;
     display: inline-flex;
     align-items: center;
     > :not(:last-child) {
       margin-right: .5em;
     }
     > input {
-      height: $height;
-      border: 1px solid $border-color;
-      border-radius: $border-radius;
-      font-size: $box-fontsize;
+      height: 32px;
+      border: 1px solid #999;
+      border-radius: 4px;
+      font-size: 12px;
       padding: 0 8px;
       color: #2d2d2d;
       outline: none;
+
       &:hover {
-        border: 1px solid $color-primary;
+        border: 1px solid #448aff;
       }
+
       &:focus {
-        box-shadow: inset 0 1px 3px $box-shadow-color;
+        box-shadow: inset 0 1px 3px #448aff;
       }
+
       &[disabled], &[readonly] {
         opacity: 0.5;
         cursor: not-allowed;
-        border-color: $border-color-hover;
+        border-color: #666;
+      }
+      &.error {
+        font-size: 12px;
       }
     }
     &.error {
       > input {
-        border-color: $color-danger;
+        border-color: #ff5722;
+
         &:focus {
-          box-shadow: inset 0 1px 3px $color-danger;
+          box-shadow: inset 0 1px 3px #ff5722;
         }
       }
     }
     .icon-error {
-      fill: $color-danger;
+      fill: #ff5722;
       width: 1.4em;
       height: 1.4em;
     }
+
     .error-message {
-      color: $color-danger
+      color: #ff5722
     }
+
     .icon-tip {
-      fill: $color-success;
+      fill: #4caf50;
       width: 1.4em;
       height: 1.4em;
     }
+
     .tip-message {
-      color: $color-success
+      color: #4caf50;
     }
   }
 </style>
