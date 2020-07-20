@@ -168,3 +168,23 @@ title:Grid-栅格
   </div>
 ```
 
+## 参数说明
+<br>
+ 
+ #### Row Attributes
+ 
+ | 参数 | 说明| 类型  |   可选值| 默认值     |
+ | :---       |    :---   |    :--- |    :--- |    :--- |
+ | gutter  | 栅格间隔      | string/number   | ——  |  0  |
+ | align   | 分栏对齐方式      | string   | center/left/right  |  ——  |
+ 
+ #### Col Attributes
+ 
+ | 参数 | 说明| 类型  |   可选值| 默认值     |
+  | :---       |    :---   |    :--- |    :--- |    :--- |
+  | span | 栅格占据的列数      | number   | ——  |  24  |
+  | offset  | 栅格左侧的间隔格数      | number   | ——  |  0  |
+  | ipad | 屏幕尺寸大于576像素    | object (例如： {span: 4, offset: 4})  | ——  |  ——  |
+  | narrow-pc | 屏幕尺寸大于765像素    | object (例如： {span: 4, offset: 4})  | ——  |  ——  |
+  | pc | 屏幕尺寸大于992像素    | object (例如： {span: 4, offset: 4})  | ——  |  ——  |
+  | wide-pc | 屏幕尺寸大于1200像素    | object (例如： {span: 4, offset: 4})  | ——  |  ——  |
