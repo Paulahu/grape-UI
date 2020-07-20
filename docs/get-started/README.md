@@ -19,15 +19,38 @@ title: 快速上手
 IE 8 及以上浏览器支持此样式。
 
 ## 引入 grape-ui
+#### 全局引入
 
 ```js
-import { Button } from "grape-ui";
+import Vue from 'vue'
 import "grape-ui/dist/index.css";
+import { Button, ButtonGroup, Row, Col, Icon, Input} from 'grape-ui'
+
+Vue.component('g-button', Button)
+Vue.component('g-icon', Icon)
+Vue.component('g-button-group', ButtonGroup)
+Vue.component('g-input', Input)
+Vue.component('g-row', Row)
+Vue.component('g-col', Col)
+
+```
+
+#### 模块化引用
+
+```js
+import Vue from 'vue'
+import "grape-ui/dist/index.css";
+import { Button, ButtonGroup, Row, Col, Icon, Input} from 'grape-ui'
 
 export default {
-  name: "app",
-  components: {
-    "g-button": Button
-  }
-};
+    name: 'app',
+    components: {
+        'g-button-group': ButtonGroup,
+        'g-button': Button,
+        'g-icon': Icon,
+        'g-input': Input,
+        'g-row': Row,
+        'g-col': Col
+    }
+}
 ```

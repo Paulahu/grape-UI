@@ -24,21 +24,6 @@ An easy UI components based on Vue.
 *，*::before,*::after{ box-sizing: border-box }
 ```
 
-你还需要设置默认颜色等变量（后续会改为  SCSS 变量）
-```css
-html {
-  --button-height: 32px;
-  --font-size: 14px;
-  --button-bg: white;
-  --button-active-bg: #eee;
-  --border-radius: 4px;
-  --color: #333;
-  --border-color: #999;
-  --border-color-hover: #666;
-}
-```
-IE 15 及以上浏览器都支持此样式。
-
 ### 2. 安装
 安装 grape-ui
 
@@ -53,23 +38,47 @@ yarn add grape-ui
 ```
 
 ### 3. 引入grape-ui
-```javascript
-import { Button, Icon, ButtonGroup } from 'grape-ui'
-import 'grape-ui/dist/index.css'
+#### 全局引入
+
+```js
+import Vue from 'vue'
+import "grape-ui/dist/index.css";
+import { Button, ButtonGroup, Row, Col, Icon, Input} from 'grape-ui'
+
+Vue.component('g-button', Button)
+Vue.component('g-icon', Icon)
+Vue.component('g-button-group', ButtonGroup)
+Vue.component('g-input', Input)
+Vue.component('g-row', Row)
+Vue.component('g-col', Col)
+
+```
+
+#### 模块化引用
+
+```js
+import Vue from 'vue'
+import "grape-ui/dist/index.css";
+import { Button, ButtonGroup, Row, Col, Icon, Input} from 'grape-ui'
 
 export default {
-   name: 'app',
-   components: {
-       'g-button': Button
-   }
+    name: 'app',
+    components: {
+        'g-button-group': ButtonGroup,
+        'g-button': Button,
+        'g-icon': Icon,
+        'g-input': Input,
+        'g-row': Row,
+        'g-col': Col
+    }
 }
 ```
 
 ## 现已支持
 
 - [x] Button（按钮）
-- [ ] Input（输入框）
-- [ ] Grid（栅栏）
+- [x] Input（输入框）
+- [x] Grid（栅栏）
 - [ ] Layout（布局）
 - [ ] Toast（吐司弹出）
 - [ ] Tabs（标签页）
@@ -77,7 +86,7 @@ export default {
 - [ ] Collapse（折叠面板）
 
 ## 文档
-详细介绍请参阅[官方文档]()（待更新）
+详细介绍请参阅[官方文档](https://github.com/Paulahu/grape-UI)
 ## 提问
 如果你遇到了问题或者有疑问，欢迎给我提[Issues](https://github.com/Paulahu/grape-UI/issues)
 ## 变更记录
