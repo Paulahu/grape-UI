@@ -6,7 +6,6 @@
 
 An easy UI components based on Vue.
 
-[![Build Status](https://travis-ci.org/Paulahu/grape-UI.svg?branch=master)](https://travis-ci.org/Paulahu/grape-UI)
 [![npm](https://img.shields.io/npm/v/grape-ui?style=flat)](https://www.npmjs.com/package/grape-ui-test)
 ![NPM](https://img.shields.io/npm/l/grape-ui)
 </div>
